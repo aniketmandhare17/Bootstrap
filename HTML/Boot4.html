@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+        function Sum() {
+            debugger;
+            var income = $("#income").val();
+            var dedction = $("#dedction").val();
+            var c = income - dedction;
+            if (c >= 250000) {
+                c = income;
+                $("#txtResult").val(c)
+            }
+            else if (c > 250000 && c <= 500000) {
+                c = c * 5 / 100;
+                $("#txtResult").val(c)
+            }
+            else if (c > 500000 && c <= 1000000) {
+                c = c * 20 / 100;
+                $("#txtResult").val(c)
+            }
+            else
+                c = income;
+            $("#txtResult").val(c)
+
+        }
+
+
+        function Show() {
+            var x = document.getElementById("tax");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function Reset() {
+            alert("Hello")
+            document.getElementById("income").value = "";
+            document.getElementById("dedction").value = "";
+            document.getElementById("txtResult").value = "";
+        }
+       
+
+           
+
+</script>
+</head >
+<body>
+
+
+    <img src="e10.png " alt="Lights" style="width:50% ">
+    <div class="row  mb-2">
+        <div class="col-sm-12 bg-primary text-white border rounded ">
+            <ul class="list-inline ">
+                <li><a href="#"><h5>Home</h5></a></li>
+                <li><a href="#"><h5>Download</h5> </a></li>
+                <li><a href="#"><h5>News & Update</h5></a></li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+    <div class="container-fluide m-2 border ">
+        <div class="font-weight-bold ">
+            <h6>*.Tax Calculation indiviuals 2020-21.*</h6>
+        </div>
+
+        <div class="row bg-light ">
+            <div class="col-sm-6 font-weight-bold border">
+                Age
+            </div>
+            <div class="col-sm-6 border">
+                <div class="form-group">
+                    <select class="form-control" id="sel1">
+                        <option>Below 60 years(Normal Citizen)</option>
+                        <option>Below 60 years(Other Citizen)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row ">
+            <div class="col-sm-6 font-weight-bold border ">
+                Estimated Annual Income #
+            </div>
+            <div class="col-sm-6  border">
+                <div class="form-group row">
+                    <div class="col-xs-2">
+                        <input class="form-control" id="income" name="income" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-sm-6 font-weight-bold border  ">
+                less Exemtions / Deductions*
+            </div>
+            <div class="col-sm-6  border">
+                <div class="form-group row">
+                    <div class="col-xs-2">
+                        <input class="form-control" id="dedction" name="dedction" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="">
+            <div class="col-sm-12 font-weight-bold border py-1 ">
+                <div class="text-center">
+                    <button type="submit" onclick="Sum()" class="btn btn-primary btn-sm  bg-success " id="email" name="email"> Compare Tax under Existing & New Regime</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-sm-6 font-weight-bold border  ">
+                $ Income Tax ..
+            </div>
+            <div class="col-sm-6  border">
+                <div class="form-group row">
+                    <div class="col-xs-2">
+                        <input class="form-control" id="txtResult" name="txtResult" type="text">
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+        <div class="row  ">
+            <div class="col-sm-6 text-center  ">
+
+                <button class="btn btn-primary  mid-center " onclick="Show()">
+                    Tax Slabs
+                    <div id="tax">
+                        <div class="container-fluide m-2 border bg-success d-block" align="center" id="tax" name="tax">
+                            <div class="row  ">
+                                <div class="col-sm-6 font-weight-bold border">
+                                    Old Tax Slabs
+                                </div>
+                                <div class="col-sm-6 font-weight-bold border">
+                                    New Tax Slabs
+                                </div>
+                            </div>
+                            <div class="row  ">
+                                <div class="col-sm-6  border">
+                                    <div class="col-sm-4  ">
+                                        Up To Rs.2.5Lac
+                                    </div>
+                                    <div class="col-sm-2 font-weight-bold ">
+                                        Nill
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6  border">
+                                    <div class="col-sm-4 ">
+                                        Up To Rs.2.5Lac
+                                    </div>
+                                    <div class="col-sm-2 font-weight-bold ">
+                                        Nill
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row  ">
+                                <div class="col-sm-6  border">
+                                    <div class="col-sm-4">
+                                        Rs.2.5-5 lac
+                                    </div>
+                                    <div class="col-sm-2 font-weight-bold">
+                                        5%
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6  border">
+                                    <div class="col-sm-4 ">
+                                        Rs.2.5-5 lac
+                                    </div>
+                                    <div class="col-sm-2 font-weight-bold">
+                                        5%
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row  ">
+                                <div class="col-sm-6  border">
+                                    <div class="col-sm-4  ">
+                                        Rs 5-10 lac
+                                    </div>
+                                    <div class="col-sm-2 font-weight-bold">
+                                        20%
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6  border">
+                                    <div class="col-sm-4">
+                                        Rs 5-10 lac
+                                    </div>
+                                    <div class="col-sm-2 font-weight-bold ">
+                                        20%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div class="col-sm-6  ">
+                <button class="btn btn-danger  align:center" onclick="Reset()">Reset</button>
+                </div>
+      </div> 
+
+</body>
+</html>
